@@ -26,7 +26,7 @@
   font-size: 4.5rem;
 }
 
-.counter {
+.number {
   font-size: 6rem;
 }
 
@@ -34,7 +34,7 @@
   margin-top: 2rem;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1.2rem;
 }
 
 .btn {
