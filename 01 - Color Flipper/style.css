@@ -42,15 +42,16 @@ input {
 .mainTitle {
   background-color: black;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.8rem;
   margin: 2rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.2rem;
   text-align: center;
 }
 .color {
   color: rgb(87, 87, 225);
+  text-transform: capitalize;
 }
 
 .btn {
