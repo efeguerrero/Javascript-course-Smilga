@@ -1,0 +1,55 @@
+/* Google Fonts Import */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+/* Reset Style */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(243, 233, 233);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitle {
+  color: rgb(17, 17, 95);
+  letter-spacing: 0.3rem;
+  font-size: 4.5rem;
+}
+
+.counter {
+  font-size: 6rem;
+}
+
+.btnContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.btn {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  border: 2px black solid;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+  transition: linear 0.3s;
+}

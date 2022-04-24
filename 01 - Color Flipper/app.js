@@ -35,7 +35,8 @@ const mainTitle = document.querySelector('.mainTitle');
 
 function randomColor() {
   let hex = document.getElementById('hex').checked; //Change selection value everytime I click button. If outside it only checks once
-  if (hex) {
+  if (hex) 
+  //This function could have been done with a FOR Loop and accumulating values
     color = `#${hexChars[getRndInteger()]}${hexChars[getRndInteger()]}${
       hexChars[getRndInteger()]
     }${hexChars[getRndInteger()]}${hexChars[getRndInteger()]}${
