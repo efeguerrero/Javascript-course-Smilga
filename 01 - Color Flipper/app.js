@@ -33,21 +33,16 @@ const btn = document.querySelector('.btn');
 const mainContent = document.querySelector('.mainContent');
 const mainTitle = document.querySelector('.mainTitle');
 
-let color;
-
 function randomColor() {
-  let hex = document.getElementById('hex').checked;
+  let hex = document.getElementById('hex').checked; //Change selection value everytime I click button. If outside it only checks once
   if (hex) {
     color = `#${hexChars[getRndInteger()]}${hexChars[getRndInteger()]}${
       hexChars[getRndInteger()]
     }${hexChars[getRndInteger()]}${hexChars[getRndInteger()]}${
       hexChars[getRndInteger()]
     } `;
-
-    console.log(color);
   } else {
     color = `${simpleColors[Math.floor(Math.random() * simpleColors.length)]}`;
-    console.log(color);
   }
   mainContent.style.background = `${color}`;
   mainTitle.innerHTML = `Background Color: <span class="color">${color}</span>`;
