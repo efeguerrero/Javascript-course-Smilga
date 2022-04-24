@@ -23,6 +23,7 @@ function getRndInteger() {
 
 const btn = document.querySelector('.btn');
 const mainContent = document.querySelector('.mainContent');
+const mainTitle = document.querySelector('.mainTitle');
 let color;
 
 function randomColor() {
@@ -33,6 +34,8 @@ function randomColor() {
   } `;
   console.log(color);
   mainContent.style.background = `${color}`;
+  mainTitle.innerHTML = `Background Color: <span class="color">${color}</span>`;
+  mainContent.insertBefore(mainTitle, btn);
   return color;
 }
 
