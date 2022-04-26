@@ -1,0 +1,85 @@
+/* Google Fonts Import */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+/* Reset Style */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.2rem;
+}
+
+body {
+  background-color: rgb(234, 224, 224);
+}
+
+.siteTitle {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+}
+
+.mainNavContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navIcon-Container {
+  width: 2rem;
+  cursor: pointer;
+}
+
+.navIcon {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.navIcon:hover {
+  transform: rotate(90deg);
+}
+
+.linksContainer {
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+}
+
+.linksContainer-expand {
+  display: block;
+}
+
+.link {
+  padding: 0.6rem 0;
+  padding-left: 1rem;
+  list-style: none;
+  transition: 0.3s linear;
+}
+
+.link:hover {
+  background-color: rgb(175, 230, 212);
+  cursor: pointer;
+  padding-left: 1.8rem;
+}
+
+.link:hover a {
+  color: rgb(207, 93, 167);
+}
