@@ -1,0 +1,127 @@
+/* Google Fonts Import */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+/* Reset Style */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s linear;
+}
+
+.mainContainer {
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.mainTitle {
+  font-size: 3rem;
+  letter-spacing: 0.6rem;
+  margin: ;
+  margin: 0.7rem 0;
+}
+
+.underLine {
+  width: 9.5rem;
+  height: 0.2rem;
+  background-color: brown;
+}
+
+.btnContainer {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filter-btn {
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  color: brown;
+  font-weight: 400;
+  font-size: 1rem;
+  border: 2px solid brown;
+  border-radius: 0.7rem;
+}
+
+.filter-btn:hover {
+  background-color: brown;
+  color: white;
+  cursor: pointer;
+}
+
+/* Menu Item Styling */
+
+.menu-section {
+  max-width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+  margin: 1rem auto;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
+}
+
+.menu-item-img-container {
+  height: 12.5rem;
+}
+
+.menu-item-img {
+  border-radius: 0.6rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-item-main-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  border-bottom: 1px solid rgb(201, 197, 197);
+}
+
+.menu-item-price {
+  color: brown;
+  font-size: 1rem;
+}
+
+.menu-item-title {
+  font-size: 1rem;
+}
+
+.menu-item-descrip {
+  padding: 0.7rem 0rem;
+  color: grey;
+  font-size: 0.9rem;
+}
+
+/* Media Queries for Menu */
+
+@media screen and (min-width: 756px) {
+  .menu-item {
+    display: flex;
+    flex-direction: row;
+    max-width: 45rem;
+    gap: 1rem;
+  }
+
+  .menu-item-img-container {
+    width: 100%;
+    max-height: 10rem;
+  }
+}
