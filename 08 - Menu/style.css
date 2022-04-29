@@ -24,7 +24,6 @@
 .mainTitle {
   font-size: 3rem;
   letter-spacing: 0.6rem;
-  margin: ;
   margin: 0.7rem 0;
 }
 
@@ -51,6 +50,7 @@
   font-size: 1rem;
   border: 2px solid brown;
   border-radius: 0.7rem;
+  margin: 0 0.5rem;
 }
 
 .filter-btn:hover {
