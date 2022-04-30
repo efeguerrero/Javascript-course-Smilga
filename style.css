@@ -1,0 +1,37 @@
+/* Google Fonts Import */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+/* Reset Style */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  margin: 3rem;
+  font-size: 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin: 2rem;
+}
+
+ul {
+  list-style: none;
+  margin-left: 2rem;
+}
+
+li {
+  margin: 2rem;
+  font-size: 2rem;
+}
