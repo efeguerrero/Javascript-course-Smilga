@@ -92,24 +92,101 @@ const menuItems = [
     category: 'Dinner',
   },
 ];
+/////////////////////////
+////Button Generation//// (2 Methods)
+/////////////////////////
 
-////Button Generation////
+//USING ARRAY TO INSERT CODE WITH .JOIN
 
-//Filtering Btns Logic
+// let btns = [`<button class="filter-btn">All</button>`];
+// const btn = document.querySelector('.btnContainer');
 
-let btns = [`<button class="filter-btn">All</button>`];
+// //Function to use in forEach to construct categories array without duplicates
+
+// function duplicates(item) {
+//   if (!btns.includes(`<button class="filter-btn">${item.category}</button>`)) {
+//     btns.push(`<button class="filter-btn">${item.category}</button>`);
+//   }
+// }
+// menuItems.forEach(duplicates);
+// console.log(btns);
+
+// btn.innerHTML = btns.join(' ');
+
+//---------------------------------------------------------------------
+
+//ALTERNATIVE METHOD:  accumulated html code with += and then inserted that with btn.innerHTML
+
 const btn = document.querySelector('.btnContainer');
+let acc = `<button class="filter-btn">All</button>`;
 
-//Function to use in forEach to construct categories array without duplicates
-
-function duplicates(item) {
-  if (!btns.includes(`<button class="filter-btn">${item.category}</button>`)) {
-    btns.push(`<button class="filter-btn">${item.category}</button>`);
+function codeAcc(item) {
+  if (!acc.includes(item.category)) {
+    acc += `<button class="filter-btn">${item.category}</button>`;
   }
 }
-menuItems.forEach(duplicates);
-console.log(btns);
 
-btn.innerHTML = btns.join(' ');
+menuItems.forEach(codeAcc);
+btn.innerHTML = acc;
 
-//tb puedo usar for each y con += acumular el HTML en una constante random de string y luego vocar eso a btn.innerHTML para insertar sin la comas
+///////////////////////////
+////// Menu Insertion//////
+//////////////////////////
+
+//Since btns are inserted dynamically I need to select them through event propagation. filter-btn.addEventListener would return null
+
+const btnContainer = document.querySelector('.btnContainer');
+let code;
+const menuSection = document.querySelector('.menu-section');
+let filteredMenu;
+
+//Start of Menu code creation function
+
+function menuCode(item) {
+  code += `<div class="menu-item">
+          <div class="menu-item-img-container">
+            <img src=${item.img} class="menu-item-img" alt=${item.name}/>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-main-info">
+              <h2 class="menu-item-title">${item.name}</h2>
+              <h2 class="menu-item-price">${item.price}</h3>
+            </div>
+            <p class="menu-item-descrip">
+         ${item.descrip}
+            </p>
+          </div>    
+        `;
+}
+
+//End Menu code creation function
+
+//Start of  ALL Menu Generation//
+
+menuItems.forEach(menuCode);
+menuSection.innerHTML = code;
+
+//End of ALL Menu Generation//
+
+//Menu Filtering code//
+
+btnContainer.addEventListener('click', function (e) {
+  code = '';
+  const selection = e.target.textContent;
+  console.log(selection);
+
+  if (selection != 'All') {
+    filteredMenu = menuItems.filter(function (item) {
+      return item.category === `${e.target.textContent}`;
+    });
+  } else {
+    filteredMenu = menuItems;
+    console.log(filteredMenu);
+  }
+
+  filteredMenu.forEach(menuCode);
+  console.log(code);
+  menuSection.innerHTML = code;
+});
+
+//End of Menu Filtering code//
