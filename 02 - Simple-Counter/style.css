@@ -53,3 +53,9 @@
   color: white;
   transition: linear 0.3s;
 }
+
+@media screen and (max-width: 768px) {
+  .btnContainer {
+    flex-direction: column;
+  }
+}
