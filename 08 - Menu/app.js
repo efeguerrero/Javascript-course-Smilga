@@ -136,14 +136,14 @@ btn.innerHTML = acc;
 //Since btns are inserted dynamically I need to select them through event propagation. filter-btn.addEventListener would return null
 
 const btnContainer = document.querySelector('.btnContainer');
-let code;
+let code = '';
 const menuSection = document.querySelector('.menu-section');
 let filteredMenu;
 
 //Start of Menu code creation function
 
 function menuCode(item) {
-  code += `<div class="menu-item">
+  code += ` <div class="menu-item">
           <div class="menu-item-img-container">
             <img src=${item.img} class="menu-item-img" alt=${item.name}/>
           </div>
@@ -152,9 +152,8 @@ function menuCode(item) {
               <h2 class="menu-item-title">${item.name}</h2>
               <h2 class="menu-item-price">${item.price}</h3>
             </div>
-            <p class="menu-item-descrip">
-         ${item.descrip}
-            </p>
+            <p class="menu-item-descrip">${item.descrip}</p>
+          </div>
           </div>    
         `;
 }
@@ -174,6 +173,7 @@ btnContainer.addEventListener('click', function (e) {
   code = '';
   const selection = e.target.textContent;
   console.log(selection);
+  console.log(e.target);
 
   if (selection != 'All') {
     filteredMenu = menuItems.filter(function (item) {
