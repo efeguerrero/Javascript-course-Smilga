@@ -172,20 +172,19 @@ menuSection.innerHTML = code;
 btnContainer.addEventListener('click', function (e) {
   code = '';
   const selection = e.target.textContent;
-  console.log(selection);
-  console.log(e.target);
+  const btnChecker = e.target.classList; //to validate that filtering only happens when clicking on a class="filter-btn" element
 
-  if (selection != 'All') {
-    filteredMenu = menuItems.filter(function (item) {
-      return item.category === `${e.target.textContent}`;
-    });
-  } else {
-    filteredMenu = menuItems;
-    console.log(filteredMenu);
+  if (btnChecker.contains('filter-btn')) {
+    if (selection != 'All') {
+      filteredMenu = menuItems.filter(function (item) {
+        return item.category === `${e.target.textContent}`;
+      });
+    } else {
+      filteredMenu = menuItems;
+    }
   }
 
   filteredMenu.forEach(menuCode);
-  console.log(code);
   menuSection.innerHTML = code;
 });
 
