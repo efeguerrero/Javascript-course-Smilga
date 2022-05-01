@@ -182,10 +182,10 @@ btnContainer.addEventListener('click', function (e) {
     } else {
       filteredMenu = menuItems;
     }
-  }
 
-  filteredMenu.forEach(menuCode);
-  menuSection.innerHTML = code;
+    filteredMenu.forEach(menuCode);
+    menuSection.innerHTML = code;
+  }
 });
 
 //End of Menu Filtering code//
