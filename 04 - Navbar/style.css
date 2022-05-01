@@ -50,8 +50,10 @@ a {
   transition: 0.5s;
 }
 
-.navIcon:hover {
-  transform: rotate(90deg);
+@media screen and (min-width: 768px) {
+  .navIcon:hover {
+    transform: rotate(90deg);
+  }
 }
 
 .linksContainer {
