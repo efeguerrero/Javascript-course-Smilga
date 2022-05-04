@@ -160,7 +160,7 @@ function menuCode(item) {
 
 //End Menu code creation function
 
-//Start of  ALL Menu Generation//
+//Start of ALL Menu Generation//
 
 menuItems.forEach(menuCode);
 menuSection.innerHTML = code;
@@ -171,7 +171,7 @@ menuSection.innerHTML = code;
 
 btnContainer.addEventListener('click', function (e) {
   code = '';
-  const selection = e.target.textContent;
+  const selection = e.target.textContent; // John adds a data-id="breakfast" to all btns in HTMLand then instead of grabbin textContent he grabs e.target.dataset.id -- This could be useful if textContent is != from the category we are trying to filter
   const btnChecker = e.target.classList; //to validate that filtering only happens when clicking on a class="filter-btn" element
 
   if (btnChecker.contains('filter-btn')) {
