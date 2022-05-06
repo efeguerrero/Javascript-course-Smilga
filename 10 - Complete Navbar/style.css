@@ -27,11 +27,11 @@ header {
   text-align: center;
   margin-top: 2rem;
   color: #ff3366;
-  font-size: 4rem;
-  letter-spacing: 1.3rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.6rem;
   text-transform: uppercase;
-
   padding: 1rem;
+  padding-left: 1.6rem;
 }
 
 a {
@@ -45,6 +45,13 @@ a {
   background-color: white;
   position: relative;
   height: 10vh;
+  transition: all 0.2s linear;
+}
+
+.navBar-fixed {
+  position: fixed;
+  width: 100vw;
+  transition: all 0.2s linear;
 }
 
 .navTitle {
@@ -114,6 +121,10 @@ a {
     display: none;
   }
 
+  .siteTitle {
+    font-size: 4rem;
+  }
+
   .linksContainer {
     position: static;
     top: auto;
@@ -147,13 +158,8 @@ a {
     flex-direction: row;
     justify-content: space-around;
     background-color: transparent;
-    width: 90vw;
+    width: 100vw;
     margin: 0 auto;
-  }
-
-  .navBarSticky {
-    position: sticky;
-    background-color: black;
   }
 
   .navTitle {
@@ -164,6 +170,10 @@ a {
     background-color: transparent;
     cursor: pointer;
     padding-left: 0rem;
+  }
+
+  .navBar-fixed {
+    background-color: rgba(0, 0, 0, 0.9);
   }
 }
 

@@ -1,18 +1,22 @@
 const navToggle = document.querySelector('.navIcon');
 const linkContainer = document.querySelector('.linksContainer');
 
-//Short code to toggle navNabar
+//NavBar Toggle
 
 navToggle.addEventListener('click', function () {
   linkContainer.classList.toggle('linksContainer-expand');
 });
 
-//Long code to toggle navNabar
+//NavBar follow
 
-// navToggle.addEventListener('click', function () {
-//   if (linkContainer.classList.contains('linksContainer-expand')) {
-//     linkContainer.classList.remove('linksContainer-expand');
-//   } else {
-//     linkContainer.classList.add('linksContainer-expand');
-//   }
-// });
+const navBar = document.querySelector('.navBar');
+
+window.addEventListener('scroll', function () {
+  const navBarHeight = navBar.getBoundingClientRect().height;
+
+  if (window.scrollY > navBarHeight) {
+    navBar.classList.add('navBar-fixed');
+  } else {
+    navBar.classList.remove('navBar-fixed');
+  }
+});
