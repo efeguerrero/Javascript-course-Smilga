@@ -25,13 +25,19 @@ header {
 
 .siteTitle {
   text-align: center;
-  margin-top: 2rem;
+  margin-bottom: 10vh;
   color: #ff3366;
   font-size: 2.5rem;
   letter-spacing: 0.6rem;
   text-transform: uppercase;
   padding: 1rem;
   padding-left: 1.6rem;
+}
+
+/*Add this to avoid title moving around once navBar becomes "FIXED"*/
+.siteTitle-fixed {
+  margin-bottom: 0;
+  margin-top: 10vh;
 }
 
 a {
@@ -44,12 +50,14 @@ a {
   flex-direction: column;
   background-color: white;
   position: relative;
-  height: 10vh;
   transition: all 0.2s linear;
+  height: 10vh;
 }
 
 .navBar-fixed {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   transition: all 0.2s linear;
 }
@@ -78,7 +86,7 @@ a {
 }
 
 .subHeader {
-  height: 80vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;

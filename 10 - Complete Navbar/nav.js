@@ -10,13 +10,18 @@ navToggle.addEventListener('click', function () {
 //NavBar follow
 
 const navBar = document.querySelector('.navBar');
+const siteTitle = document.querySelector('.siteTitle');
 
 window.addEventListener('scroll', function () {
   const navBarHeight = navBar.getBoundingClientRect().height;
 
   if (window.scrollY > navBarHeight) {
     navBar.classList.add('navBar-fixed');
+    siteTitle.classList.add('siteTitle-fixed');
   } else {
     navBar.classList.remove('navBar-fixed');
+    siteTitle.classList.remove('siteTitle-fixed');
   }
 });
+
+/*Add siteTitle-fixed as class to the main Title to avoid title moving around once navBar becomes "FIXED"*/
