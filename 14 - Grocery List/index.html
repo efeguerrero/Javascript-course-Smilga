@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <h1 class="mainTitle">Grocery List</h1>
+      <form action="" class="listForm">
+        <input
+          type="text"
+          name=""
+          placeholder="Enter Items"
+          class="listInput"
+          id=""
+        />
+        <button type="submit" class="inputSubmit">Submit</button>
+      </form>
+      <div class="listContainer">
+        <ul class="itemList">
+          <li class="item">
+            <h2 class="itemTitle">Eggs x2</h2>
+            <div class="itemIcons">
+              <img src="./icons/edit.svg" class="icon editIcon" alt="" />
+              <img src="./icons/trash-2.svg" class="icon deleteIcon" alt="" />
+            </div>
+          </li>
+          <li class="item">
+            <h2 class="itemTitle">Bacon</h2>
+            <div class="itemIcons">
+              <img src="./icons/edit.svg" class="icon editIcon" alt="" />
+              <img src="./icons/trash-2.svg" class="icon deleteIcon" alt="" />
+            </div>
+          </li>
+        </ul>
+        <h3 class="clearItems">Clear Items</h3>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
