@@ -34,6 +34,7 @@ body {
   text-align: center;
   letter-spacing: 0.3rem;
   color: brown;
+  margin-top: 1rem;
 }
 
 /*End of Main Styling*/
@@ -81,6 +82,12 @@ ul {
   list-style: none;
 }
 
+.blank {
+  display: block;
+  text-align: center;
+  color: rgb(189, 189, 189);
+}
+
 .item {
   display: flex;
   flex-direction: row;
@@ -110,9 +117,23 @@ ul {
   cursor: pointer;
 }
 
+.emptyList {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  color: darkgray;
+}
+
 /*End of Item List*/
 
 /*Start of  Clear Items*/
+
+.clearbtn {
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 0.4rem;
+}
+
 .clearItems {
   text-align: center;
   color: brown;
@@ -134,3 +155,30 @@ ul {
 }
 
 /*End of  Clear Items*/
+
+/*Alert or Action msg style*/
+
+.alertContainer {
+  height: 1rem;
+}
+
+.actionmsg {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 0.2rem;
+  border-radius: 0.3rem;
+}
+
+.add {
+  background-color: rgb(173, 213, 173);
+}
+
+.edit {
+  background-color: rgb(93, 93, 126);
+}
+
+.delete {
+  background-color: rgb(195, 123, 123);
+  color: white;
+}
