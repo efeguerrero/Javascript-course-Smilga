@@ -60,8 +60,9 @@ body {
   padding-left: 0.5rem;
 }
 
-.inputSubmit {
+.input {
   border: none;
+  width: 5rem;
   border-radius: 0.4rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -175,7 +176,8 @@ ul {
 }
 
 .edit {
-  background-color: rgb(93, 93, 126);
+  background-color: rgb(121, 178, 182);
+  color: white;
 }
 
 .delete {
