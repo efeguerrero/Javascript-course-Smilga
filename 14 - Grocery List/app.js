@@ -33,7 +33,6 @@ form.addEventListener('submit', function (e) {
       </div></li>`);
       insert(insertArray);
       idCounter++;
-      nameInput.value = ''; //go back to placeholder after entering item
       alertmsg('add', 'Item Added');
       //set timer as global variable then reset it everytime before execution settimeout function. So that time goes back to maximum on each click
       if (itemList.textContent) {
@@ -52,6 +51,7 @@ const clearbtn = document.querySelector('.clearbtn');
 clearbtn.addEventListener('click', function () {
   listItems = [];
   insertArray = [];
+  insert(insertArray);
   itemList.innerHTML = ` <span class="emptyList">List Empty</span>`;
   idCounter = 1;
   clearbtn.innerHTML = '';
@@ -133,10 +133,11 @@ itemList.addEventListener('click', function (e) {
     nameInput.value = itemValue.name; //filling input form with name from item to be edited
     itemPosition = listItems.indexOf(itemValue, 0); //finding index of item to be edited on original listItems Array
 
-    //input button logic to turn on edit mode by toggling classes
-    input.classList.toggle('inputSubmit');
-    input.classList.toggle('inputEdit');
+    //input button logic to turn on edit mode by
+    input.classList.remove('inputSubmit');
+    input.classList.add('inputEdit');
     input.textContent = `Edit`;
+    //add and remove instead of toggle so that I can remain in edit mode if I change item
   }
 });
 
@@ -161,7 +162,6 @@ form.addEventListener('submit', function (e) {
       });
       insert(insertArray);
       alertmsg('edit', 'Item Edited');
-      nameInput.value = ''; //go back to placeholder
     } else alertmsg('delete', 'Please Enter Item');
   }
 });
@@ -173,6 +173,7 @@ form.addEventListener('submit', function (e) {
 function insert(insertArray) {
   itemList.innerHTML = insertArray.join('');
   input.textContent = `Submit`;
+  nameInput.value = ''; //go back to placeholder
 
   //Classes reset in submit/edit btn
   if (input.classList.contains('inputEdit')) {

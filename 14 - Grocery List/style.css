@@ -51,6 +51,7 @@ body {
 
 .listInput {
   width: 100%;
+  font-size: 1rem;
   border: none;
   border-radius: 0.4rem;
   border-top-right-radius: 0;
@@ -62,13 +63,14 @@ body {
 
 .input {
   border: none;
-  width: 5rem;
+  font-size: 1rem;
+  width: 8rem;
   border-radius: 0.4rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   background-color: brown;
   color: white;
-  padding: 0.5rem;
+  padding: 0.8rem;
   cursor: pointer;
 }
 
@@ -105,7 +107,7 @@ ul {
 }
 
 .itemTitle {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 300;
 }
 
@@ -114,8 +116,9 @@ ul {
 }
 
 .icon {
-  width: 0.9rem;
+  width: 1.4rem;
   cursor: pointer;
+  margin-left: 0.3rem;
 }
 
 .emptyList {
@@ -138,7 +141,7 @@ ul {
 .clearItems {
   text-align: center;
   color: brown;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   cursor: pointer;
   margin-top: 3rem;
   font-weight: 400;
