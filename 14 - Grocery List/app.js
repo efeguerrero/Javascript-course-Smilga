@@ -72,8 +72,6 @@ itemList.addEventListener('click', function (e) {
 
     // map new insertArray with new filtered listItems
 
-    console.log(listItems);
-
     insertArray = listItems.map(function (item) {
       const code = `<li class="item" id="${item.id}">
       <h2 class="itemTitle" >${item.name}</h2>
@@ -166,11 +164,12 @@ form.addEventListener('submit', function (e) {
   }
 });
 
-/////////////////////////////////////
-//JOINING FUNCTION WITH BTN RESET////
-/////////////////////////////////////
+////////////////////////////////////////////////////////////////
+//JOINING FUNCTION  TO INSERT ARRAY INTO HTML WITH BTN RESET////
+////////////////////////////////////////////////////////////////
 
 function insert(insertArray) {
+  Itemstorage(listItems);
   itemList.innerHTML = insertArray.join('');
   input.textContent = `Submit`;
   nameInput.value = ''; //go back to placeholder
@@ -193,3 +192,47 @@ function alertmsg(alertClass, message) {
   clearTimeout(timer);
   timer = setTimeout(removeAlert, 2000);
 }
+
+////////////////////////////////////////
+// LOCAL STORAGE FUNCTION///////////////
+///////////////////////////////////////
+
+function Itemstorage(array) {
+  localStorage.setItem('item', JSON.stringify(array));
+}
+
+/////////////////////////////
+//RECALL OF DATA AT START///
+///////////////////////////
+
+window.addEventListener('load', function () {
+  if (JSON.parse(localStorage.getItem('item')).length > 0) {
+    console.log(JSON.parse(localStorage.getItem('item')).length);
+    console.log(localStorage.getItem('item').length);
+    console.log(localStorage.getItem('item'));
+    console.log('Local Storage not empty');
+    //Validate if there is something stored from previous time
+
+    listItems = JSON.parse(localStorage.getItem('item')); //assign it to list items and run insertion code
+    insertArray = listItems.map(function (item) {
+      const code = `<li class="item" id="${item.id}">
+      <h2 class="itemTitle" >${item.name}</h2>
+      <div class="itemIcons">
+      <img src="./icons/edit.svg" class="icon editIcon" alt="" />
+      <img src="./icons/trash-2.svg" class="icon deleteIcon" alt="" />
+      </div></li>`;
+      return code;
+    });
+    insert(insertArray);
+    clearbtn.innerHTML = `<h3 class="clearItems">Clear Items</h3>`; //insert Clear Item button at start if you alread had items to load
+  } else {
+    console.log('storage is empty');
+    console.log(JSON.parse(localStorage.getItem('item')).length);
+    console.log(JSON.parse(localStorage.getItem('item')));
+    console.log(typeof JSON.parse(localStorage.getItem('item')));
+    console.log(typeof localStorage.getItem('item'));
+    console.log(localStorage.length);
+  }
+});
+
+//////////////////////////////////////////////////
